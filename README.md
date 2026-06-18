@@ -38,7 +38,17 @@ Then import the repository into Vercel or connect the GitHub project. No custom 
 
 ## Form Backend
 
-The booking form is front-end ready and currently shows a local confirmation. Replace the submit handler in `components/BookingForm.tsx`, or connect it to Formspree, a Vercel Server Action, Resend email route, or CRM endpoint.
+The booking form sends requests through `app/api/booking/route.ts` using Resend.
+
+Add these environment variables in Vercel:
+
+```bash
+RESEND_API_KEY=your_resend_api_key_here
+BOOKING_EMAIL_TO=cheesedogsofnc@gmail.com
+BOOKING_EMAIL_FROM=Cheesedogs Website <bookings@cheesedogsnc.com>
+```
+
+For production sending, verify `cheesedogsnc.com` in Resend so `BOOKING_EMAIL_FROM` can use the Cheesedogs domain. If the domain is not verified yet, use the sender address Resend provides during setup.
 
 ## SEO Included
 

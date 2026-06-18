@@ -17,7 +17,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Ready to bring Cheesedogs to your event?"
-        text="Send the event details, ask a menu question, or book the hot dog cart for a Triangle NC stop."
+        text="Send the event details, ask a menu question, or book the hot dog cart for a Triangle NC stop. Requests go straight to Cheesedogs NC."
         image="/images/cheesedogs-catering-real.jpg"
         imageAlt="Cheesedogs hot dog cart serving guests at a Triangle event"
         primaryHref="#contact-form"

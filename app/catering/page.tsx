@@ -123,7 +123,7 @@ export default function CateringPage() {
             <SectionHeader
               eyebrow="Request a quote"
               title="Tell us about your event."
-              text="Share the date, city, guest count, and event type. This front-end form is ready to connect to Formspree, Resend, or a Vercel Server Action."
+              text="Share the date, city, guest count, and event type. Your request will be emailed directly to Cheesedogs NC."
             />
             <div className="mt-8">
               <ButtonLink href="/contact" variant="dark">Contact Details</ButtonLink>
