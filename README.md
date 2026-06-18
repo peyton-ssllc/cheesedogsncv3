@@ -32,7 +32,7 @@ Then import the repository into Vercel or connect the GitHub project. No custom 
 
 - Business info, phone, email, social links: `data/site.ts`
 - Menu items and prices: `data/site.ts`
-- Schedule cards: `data/site.ts`
+- Schedule calendar: update the Cheesedogs Google Calendar
 - Form backend: `components/BookingForm.tsx`
 - Photos and logo: live site images are in `public/images/`, and the logo is in `public/images/brand/cheesedogs-logo.png`
 
@@ -49,6 +49,18 @@ BOOKING_EMAIL_FROM=Cheesedogs Website <bookings@cheesedogsnc.com>
 ```
 
 For production sending, verify `cheesedogsnc.com` in Resend so `BOOKING_EMAIL_FROM` can use the Cheesedogs domain. If the domain is not verified yet, use the sender address Resend provides during setup.
+
+## Schedule Calendar
+
+The Locations/Schedule page reads upcoming events from the Cheesedogs Google Calendar iCal feed.
+
+Optional Vercel environment variable:
+
+```bash
+GOOGLE_CALENDAR_ICS_URL=https://calendar.google.com/calendar/ical/cheesedogsofnc%40gmail.com/public/basic.ics
+```
+
+Add future public stops to the calendar with the event title, time, and location. Events with titles containing `Private`, `Wedding`, `Closed`, or `Booked` will show as booked dates without exposing private event details.
 
 ## SEO Included
 
