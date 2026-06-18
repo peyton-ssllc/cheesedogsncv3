@@ -12,8 +12,6 @@ type BookingRequest = {
   message?: string;
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const runtime = "nodejs";
 
 const emailTo = process.env.BOOKING_EMAIL_TO || "cheesedogsofnc@gmail.com";
@@ -100,9 +98,13 @@ function buildEmailHtml(data: Required<BookingRequest>) {
 
 export async function POST(request: Request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
+    const resendApiKey = process.env.RESEND_API_KEY;
+
+    if (!resendApiKey) {
       return NextResponse.json({ error: "Email service is not configured." }, { status: 500 });
     }
+
+    const resend = new Resend(resendApiKey);
 
     const body = (await request.json()) as BookingRequest & { company?: string };
 
