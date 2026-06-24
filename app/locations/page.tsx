@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CalendarDays, Clock, Facebook, Instagram, MapPin, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { PageHero } from "@/components/PageHero";
@@ -324,11 +325,24 @@ export default async function LocationsPage() {
               {month.days.map((day) => (
                 <div key={day.date.toISOString()} className="min-h-20 rounded-2xl border border-grill/15 bg-white p-2">
                   <div className="text-sm font-black">{day.date.getDate()}</div>
-                  <div className="mt-2 grid gap-1">
+                  <div className="mt-2 flex flex-wrap gap-1">
                     {day.events.slice(0, 2).map((event) => (
-                      <div key={`${event.startsAt.toISOString()}-${event.title}`} className={`truncate rounded-full px-2 py-1 text-[0.65rem] font-black uppercase ${event.isPrivate ? "bg-grill text-white" : "bg-dogred text-white"}`}>
-                        {event.isPrivate ? "Booked" : "Stop"}
-                      </div>
+                      <span
+                        key={`${event.startsAt.toISOString()}-${event.title}`}
+                        aria-label={event.isPrivate ? "Booked event" : "Cheesedogs event"}
+                        title={event.title}
+                        className={`grid h-8 w-8 place-items-center rounded-full border-2 bg-white shadow-sm ${
+                          event.isPrivate ? "border-grill" : "border-dogred"
+                        }`}
+                      >
+                        <Image
+                          src="/images/brand/cheesedogs-logo.png"
+                          alt=""
+                          width={22}
+                          height={18}
+                          className="h-5 w-6 object-contain"
+                        />
+                      </span>
                     ))}
                   </div>
                 </div>
