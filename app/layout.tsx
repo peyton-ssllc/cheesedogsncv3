@@ -37,6 +37,12 @@ export const metadata: Metadata = {
     description: "Book the hot dog cart for events across the Triangle.",
     images: ["/images/cheesedogs-hero-real.jpg"]
   },
+  icons: {
+    icon: [
+      { url: "/images/brand/cheesedogs-logo.png", type: "image/png" }
+    ],
+    apple: [{ url: "/images/brand/cheesedogs-logo.png", type: "image/png" }]
+  },
   alternates: {
     canonical: business.url
   }
@@ -50,6 +56,7 @@ const localBusinessSchema = {
   telephone: business.phone,
   email: business.email,
   image: `${business.url}/images/cheesedogs-hero-real.jpg`,
+  logo: `${business.url}/images/brand/cheesedogs-logo.png`,
   description:
     "Mobile hot dog cart and catering service serving loaded hot dogs, cheese dogs, chips, and drinks across the Triangle area of North Carolina.",
   areaServed: schemaArea,
