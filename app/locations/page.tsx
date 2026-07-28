@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/locations" }
 };
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 const calendarUrl =
   process.env.GOOGLE_CALENDAR_ICS_URL ||
@@ -130,9 +131,15 @@ function parseCalendar(ics: string) {
 
 async function getCalendarEvents() {
   try {
-    const response = await fetch(calendarUrl, {
-      next: { revalidate },
-      headers: { accept: "text/calendar,text/plain,*/*" }
+    const url = new URL(calendarUrl);
+    url.searchParams.set("refresh", Date.now().toString());
+
+    const response = await fetch(url.toString(), {
+      cache: "no-store",
+      headers: {
+        accept: "text/calendar,text/plain,*/*",
+        "cache-control": "no-cache"
+      }
     });
 
     if (!response.ok) {
