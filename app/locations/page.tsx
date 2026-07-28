@@ -26,6 +26,7 @@ type CalendarEvent = {
   description: string;
   startsAt: Date;
   endsAt?: Date;
+  updatedAt?: Date;
   isPrivate: boolean;
   isAllDay: boolean;
 };
@@ -81,6 +82,56 @@ function parseIcsDate(value = "") {
   return { date, isAllDay: false };
 }
 
+function normalizeTitle(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function dayKey(date: Date) {
+  return new Intl.DateTimeFormat("en-CA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZone: "America/New_York"
+  }).format(date);
+}
+
+function hasRealLocation(event: CalendarEvent) {
+  return Boolean(event.location && event.location !== "Location coming soon" && event.location !== "Triangle NC");
+}
+
+function chooseBetterEvent(current: CalendarEvent, next: CalendarEvent) {
+  if (hasRealLocation(next) && !hasRealLocation(current)) {
+    return next;
+  }
+
+  if (!hasRealLocation(next) && hasRealLocation(current)) {
+    return current;
+  }
+
+  if ((next.updatedAt?.getTime() || 0) > (current.updatedAt?.getTime() || 0)) {
+    return next;
+  }
+
+  return current;
+}
+
+function dedupeEvents(events: CalendarEvent[]) {
+  const byTitleAndDay = new Map<string, CalendarEvent>();
+
+  for (const event of events) {
+    const key = `${normalizeTitle(event.title)}-${dayKey(event.startsAt)}`;
+    const existing = byTitleAndDay.get(key);
+
+    byTitleAndDay.set(key, existing ? chooseBetterEvent(existing, event) : event);
+  }
+
+  return Array.from(byTitleAndDay.values());
+}
+
 function parseCalendar(ics: string) {
   const events: CalendarEvent[] = [];
   const lines = unfoldIcs(ics).split(/\r?\n/);
@@ -106,6 +157,7 @@ function parseCalendar(ics: string) {
           description: isPrivate ? "The cart is booked for a private event." : decodeIcsText(current.DESCRIPTION || ""),
           startsAt: start.date,
           endsAt: end?.date,
+          updatedAt: parseIcsDate(current["LAST-MODIFIED"] || current.CREATED)?.date,
           isPrivate,
           isAllDay: start.isAllDay
         });
@@ -124,7 +176,7 @@ function parseCalendar(ics: string) {
   const now = new Date();
   const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  return events
+  return dedupeEvents(events)
     .filter((event) => event.startsAt >= startOfToday)
     .sort((a, b) => a.startsAt.getTime() - b.startsAt.getTime());
 }
