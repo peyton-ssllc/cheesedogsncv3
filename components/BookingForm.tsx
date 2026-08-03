@@ -67,6 +67,14 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
         Event Location
         <input name="eventLocation" placeholder="City, venue, or neighborhood" className="focus-ring rounded-2xl border-2 border-grill/20 px-4 py-3" />
       </label>
+      <label className="grid gap-2 text-sm font-bold">
+        County
+        <select name="county" className="focus-ring rounded-2xl border-2 border-grill/20 px-4 py-3">
+          <option>Wake County</option>
+          <option>Orange County</option>
+          <option>Other</option>
+        </select>
+      </label>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-bold">
           Estimated Guest Count
@@ -84,6 +92,23 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
             <option>Sports event</option>
             <option>Grand opening</option>
             <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="grid gap-2 text-sm font-bold">
+          Hot Dog Type
+          <select name="hotDogType" className="focus-ring rounded-2xl border-2 border-grill/20 px-4 py-3">
+            <option>Classic (Ballpark)</option>
+            <option>Premium (Bright Leaf Red)</option>
+            <option>Both</option>
+          </select>
+        </label>
+        <label className="grid gap-2 text-sm font-bold">
+          Topping Type
+          <select name="toppingType" className="focus-ring rounded-2xl border-2 border-grill/20 px-4 py-3">
+            <option>Classic Menu Toppings</option>
+            <option>Gourmet to Order</option>
           </select>
         </label>
       </div>
