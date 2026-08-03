@@ -7,8 +7,11 @@ type BookingRequest = {
   phone?: string;
   eventDate?: string;
   eventLocation?: string;
+  county?: string;
   guestCount?: string;
   eventType?: string;
+  hotDogType?: string;
+  toppingType?: string;
   message?: string;
 };
 
@@ -74,8 +77,11 @@ function buildEmailHtml(data: Required<BookingRequest>) {
                       ${row("Phone", data.phone)}
                       ${row("Event date", data.eventDate)}
                       ${row("Event location", data.eventLocation)}
+                      ${row("County", data.county)}
                       ${row("Estimated guest count", data.guestCount)}
                       ${row("Event type", data.eventType)}
+                      ${row("Hot dog type", data.hotDogType)}
+                      ${row("Topping type", data.toppingType)}
                       ${row("Message", data.message)}
                     </table>
                     <div style="margin-top:26px;padding:18px;border-radius:18px;background:#fff4db;border:2px solid #f1d8d1;">
@@ -118,8 +124,11 @@ export async function POST(request: Request) {
       phone: clean(body.phone),
       eventDate: clean(body.eventDate),
       eventLocation: clean(body.eventLocation),
+      county: clean(body.county),
       guestCount: clean(body.guestCount),
       eventType: clean(body.eventType),
+      hotDogType: clean(body.hotDogType),
+      toppingType: clean(body.toppingType),
       message: clean(body.message)
     };
 
