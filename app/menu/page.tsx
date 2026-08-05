@@ -52,22 +52,21 @@ export default function MenuPage() {
           <SectionHeader
             eyebrow="Official menu"
             title="Pick your dog, make it a combo, load it your way."
-            text="A cleaner digital menu board based on the current Cheesedogs setup: hot dogs on one side, pricing and combos on the other, and toppings as quick-scan tags."
+            text="A cleaner digital menu board based on the current Cheesedogs setup: specialty dogs on one side, classic hot dogs and combos on the other, and toppings as quick-scan tags."
           />
           <div className="mt-10 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
             <article className="shine-card rounded-[2rem] border-2 border-grill bg-white p-6 shadow-crisp transition hover:-translate-y-1">
               <div className="flex items-center justify-between gap-4 border-b-2 border-grill pb-4">
-                <h2 className="text-3xl font-black uppercase">Hot Dogs</h2>
+                <h2 className="text-3xl font-black uppercase">Specialty Dogs</h2>
                 <span className="rounded-full bg-dogred px-4 py-2 text-xs font-black uppercase tracking-wide text-white">Regular or Gourmet</span>
               </div>
               <div className="mt-5 grid gap-4">
                 {hotDogs.map((item) => (
-                  <div key={item.name} className="grid gap-3 rounded-3xl bg-cream p-4 sm:grid-cols-[1fr_auto] sm:items-start">
+                  <div key={item.name} className="rounded-3xl bg-cream p-4">
                     <div>
                       <h3 className="text-xl font-black">{item.name}</h3>
                       <p className="mt-1 text-grill/70">{item.description}</p>
                     </div>
-                    <span className="rounded-full bg-white px-3 py-2 text-sm font-black text-dogred shadow-sm">{item.price}</span>
                   </div>
                 ))}
               </div>
@@ -75,15 +74,14 @@ export default function MenuPage() {
 
             <div className="grid gap-5">
               <article className="shine-card rounded-[2rem] border-2 border-grill bg-white p-6 shadow-crisp transition hover:-translate-y-1">
-                <h2 className="text-2xl font-black uppercase">Pricing</h2>
+                <h2 className="text-2xl font-black uppercase">Hot Dogs</h2>
                 <div className="mt-5 grid gap-3">
                   {[...singleDogs, ...doubleDogs].map((item, index) => (
-                    <div key={`${item.name}-${index}`} className="flex items-center justify-between gap-4 rounded-2xl border-2 border-grill/10 px-4 py-3">
+                    <div key={`${item.name}-${index}`} className="rounded-2xl border-2 border-grill/10 px-4 py-3">
                       <div>
                         <h3 className="font-black">{index < singleDogs.length ? "Single" : "Double"} {item.name}</h3>
                         <p className="text-sm text-grill/60">{item.description}</p>
                       </div>
-                      <span className="text-lg font-black text-dogred">{item.price}</span>
                     </div>
                   ))}
                 </div>
@@ -93,12 +91,11 @@ export default function MenuPage() {
                 <h2 className="text-2xl font-black uppercase">Combos</h2>
                 <div className="mt-5 grid gap-3">
                   {combos.map((item) => (
-                    <div key={item.name} className="flex items-start justify-between gap-4 border-t-2 border-grill/10 pt-3 first:border-t-0 first:pt-0">
+                    <div key={item.name} className="border-t-2 border-grill/10 pt-3 first:border-t-0 first:pt-0">
                       <div>
                         <h3 className="font-black">{item.name}</h3>
                         <p className="text-sm text-grill/60">{item.description}</p>
                       </div>
-                      <span className="rounded-full bg-dogred px-3 py-1 text-sm font-black text-white">{item.price}</span>
                     </div>
                   ))}
                 </div>
