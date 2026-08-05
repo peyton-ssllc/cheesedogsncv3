@@ -8,7 +8,7 @@ import { business, featuredMenu, perfectFor, serviceAreas, testimonials } from "
 export const metadata: Metadata = {
   title: "Triangle NC's Favorite Hot Dog Cart",
   description:
-    "Book Cheesedogs NC for loaded hot dogs, cheese dogs, cold drinks, and mobile hot dog cart catering in Raleigh, Durham, Cary, Apex, and the Triangle.",
+    "Book Cheesedogs NC for loaded hot dogs, cheese dogs, cold drinks, and mobile hot dog cart catering in Raleigh, Wake Forest, Cary, Apex, and the Triangle.",
   alternates: { canonical: "/" }
 };
 
@@ -72,7 +72,7 @@ export default function HomePage() {
             <SectionHeader
               eyebrow="Crave-worthy cart food"
               title="Built for happy crowds, quick service, and second trips."
-              text="Cheesedogs NC brings the smell, sizzle, toppings, and simple joy of a great hot dog cart to events across Raleigh, Durham, Cary, Apex, and nearby communities."
+              text="Cheesedogs NC brings the smell, sizzle, toppings, and simple joy of a great hot dog cart to events across Raleigh, Wake Forest, Cary, Apex, and nearby communities."
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {["Unique toppings", "Friendly service", "Easy setup"].map((item) => (
@@ -193,7 +193,7 @@ export default function HomePage() {
           <div>
             <SectionHeader
               eyebrow="Triangle service area"
-              title="Hot dog cart catering near Raleigh, Durham, Cary, and beyond."
+              title="Hot dog cart catering near Raleigh, Wake Forest, Cary, and beyond."
               text={`Looking for a hot dog cart near me, hot dog catering in Raleigh NC, or an easy event catering option in the Triangle? Cheesedogs NC serves ${business.serviceArea}.`}
             />
             <div className="mt-6 flex flex-wrap gap-2">
