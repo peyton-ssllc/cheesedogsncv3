@@ -12,7 +12,7 @@ export function Footer() {
           <Image src="/images/brand/cheesedogs-logo.png" alt="Cheesedogs logo" width={190} height={160} className="h-auto w-44 rounded-2xl bg-white p-3" />
           <p className="mt-5 text-3xl font-black uppercase text-white">Cheesedogs NC</p>
           <p className="mt-4 max-w-md text-white/78">
-            Loaded hot dogs, cold drinks, and mobile cart catering for Raleigh, Durham, Cary, and the Triangle.
+            Loaded hot dogs, cold drinks, and mobile cart catering for Raleigh, Wake Forest, Cary, and the Triangle.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/catering">Book the Cart</ButtonLink>
