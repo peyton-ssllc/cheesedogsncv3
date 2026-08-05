@@ -8,7 +8,7 @@ import { business } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Cheesedogs NC, a local community-focused hot dog cart serving loaded hot dogs with unique toppings across Raleigh, Durham, Cary, and the Triangle.",
+    "Learn about Cheesedogs NC, a local community-focused hot dog cart serving loaded hot dogs with unique toppings across Raleigh, Wake Forest, Cary, and the Triangle.",
   alternates: { canonical: "/about" }
 };
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
                 The idea is simple: bring a clean, professional cart setup to the places where people already gather, then serve hot dogs that feel fun enough for a party and dependable enough for a corporate lunch.
               </p>
               <p>
-                From classic dogs to chili cheese favorites and loaded specialty builds like the Ry Guy Dog, Buffalo Dog, German Heatwave, and Cheeto Dog, Cheesedogs NC keeps the menu approachable, fast, and crowd-friendly across Raleigh, Durham, Cary, Apex, Holly Springs, Fuquay-Varina, Garner, Chapel Hill, Wake Forest, and surrounding Triangle communities.
+                From classic dogs to chili cheese favorites and loaded specialty builds like the Ry Guy Dog, Buffalo Dog, German Heatwave, and Cheeto Dog, Cheesedogs NC keeps the menu approachable, fast, and crowd-friendly across Raleigh, Wake Forest, Rolesville, Chapel Hill, Cary, Apex, Garner, Wendell, Knightdale, Hillsborough, and surrounding Triangle communities.
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function AboutPage() {
           {[
             { icon: Utensils, title: "Crave-worthy", text: "Loaded dogs, warm cheese, chili, toppings, chips, and cold drinks." },
             { icon: HeartHandshake, title: "Community-first", text: "A friendly setup for weddings, schools, teams, breweries, neighborhoods, and local hosts." },
-            { icon: MapPinned, title: "Triangle-focused", text: "Built for local SEO and real service across the Raleigh-Durham area." }
+            { icon: MapPinned, title: "Triangle-focused", text: "Built for local SEO and real service across Raleigh, Wake Forest, Cary, and nearby Triangle communities." }
           ].map(({ icon: Icon, title, text }) => (
             <article key={title} className="shine-card rounded-[2rem] border-2 border-grill bg-white p-7 transition hover:-translate-y-1">
               <Icon aria-hidden="true" className="h-9 w-9 text-dogred" />
