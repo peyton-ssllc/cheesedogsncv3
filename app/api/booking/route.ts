@@ -12,6 +12,7 @@ type BookingRequest = {
   eventType?: string;
   hotDogType?: string;
   toppingType?: string;
+  chipsDrinkNeeded?: string;
   message?: string;
 };
 
@@ -82,6 +83,7 @@ function buildEmailHtml(data: Required<BookingRequest>) {
                       ${row("Event type", data.eventType)}
                       ${row("Hot dog type", data.hotDogType)}
                       ${row("Topping type", data.toppingType)}
+                      ${row("Chips / Drink needed", data.chipsDrinkNeeded)}
                       ${row("Message", data.message)}
                     </table>
                     <div style="margin-top:26px;padding:18px;border-radius:18px;background:#fff4db;border:2px solid #f1d8d1;">
@@ -129,6 +131,7 @@ export async function POST(request: Request) {
       eventType: clean(body.eventType),
       hotDogType: clean(body.hotDogType),
       toppingType: clean(body.toppingType),
+      chipsDrinkNeeded: clean(body.chipsDrinkNeeded),
       message: clean(body.message)
     };
 
