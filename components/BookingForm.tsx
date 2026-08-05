@@ -102,6 +102,7 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
             <option>Classic (Ballpark)</option>
             <option>Premium (Bright Leaf Red)</option>
             <option>Both</option>
+            <option>Other (please specify)</option>
           </select>
         </label>
         <label className="grid gap-2 text-sm font-bold">
@@ -112,6 +113,13 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
           </select>
         </label>
       </div>
+      <label className="grid gap-2 text-sm font-bold">
+        Chips / Drink needed
+        <select name="chipsDrinkNeeded" className="focus-ring rounded-2xl border-2 border-grill/20 px-4 py-3">
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </label>
       <label className="grid gap-2 text-sm font-bold">
         Message
         <textarea
