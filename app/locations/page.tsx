@@ -9,7 +9,7 @@ import { business } from "@/data/site";
 export const metadata: Metadata = {
   title: "Locations and Schedule",
   description:
-    "Find the Cheesedogs NC weekly and monthly hot dog cart calendar for Raleigh, Durham, Cary, Wake Forest, Apex, and Triangle NC events.",
+    "Find the Cheesedogs NC weekly and monthly hot dog cart calendar for Raleigh, Wake Forest, Rolesville, Chapel Hill, Cary, Apex, Garner, Wendell, Knightdale, Hillsborough, and Triangle NC events.",
   alternates: { canonical: "/locations" }
 };
 
@@ -303,7 +303,7 @@ export default async function LocationsPage() {
       <PageHero
         eyebrow="Where to find us"
         title="The Cheesedogs calendar, fresh every week."
-        text="Check upcoming public stops, pop-ups, and booked dates across Raleigh, Durham, Cary, Wake Forest, and the Triangle."
+        text="Check upcoming public stops, pop-ups, and booked dates across Raleigh, Wake Forest, Rolesville, Chapel Hill, Cary, Apex, Garner, Wendell, Knightdale, Hillsborough, and the Triangle."
         image="/images/cheesedogs-community-real.jpg"
         imageAlt="Cheesedogs NC serving guests at an outdoor Triangle event"
         primaryHref="/catering"
@@ -419,7 +419,7 @@ export default async function LocationsPage() {
               Looking for hot dogs in the Triangle?
             </h2>
             <p className="mt-4 text-lg text-white/82">
-              Cheesedogs NC serves public and private hot dog cart stops around Raleigh, Durham, Cary, Apex, Holly Springs, Fuquay-Varina, Garner, Chapel Hill, Wake Forest, and nearby communities. Check social channels for daily updates and last-minute pop-ups.
+              Cheesedogs NC serves public and private hot dog cart stops around Raleigh, Wake Forest, Rolesville, Chapel Hill, Cary, Apex, Garner, Wendell, Knightdale, Hillsborough, and nearby communities. Check social channels for daily updates and last-minute pop-ups.
             </p>
           </div>
           <div className="flex flex-col justify-center gap-3">
