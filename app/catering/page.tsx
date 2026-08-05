@@ -10,7 +10,7 @@ import { packages, perfectFor } from "@/data/site";
 export const metadata: Metadata = {
   title: "Hot Dog Cart Catering and Booking",
   description:
-    "Book Cheesedogs NC for hot dog cart catering in Raleigh, Durham, Cary, Apex, Holly Springs, Fuquay-Varina, Garner, Chapel Hill, Wake Forest, and the Triangle.",
+    "Book Cheesedogs NC for hot dog cart catering in Raleigh, Wake Forest, Rolesville, Chapel Hill, Cary, Apex, Garner, Wendell, Knightdale, Hillsborough, and the Triangle.",
   alternates: { canonical: "/catering" }
 };
 
