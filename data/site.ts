@@ -19,7 +19,7 @@ export const business = {
   instagram: "https://www.instagram.com/cheesedogs.nc/",
   facebook: "https://www.facebook.com/profile.php?id=61579955609117",
   serviceArea:
-    "Raleigh, Durham, Cary, Apex, Holly Springs, Fuquay-Varina, Garner, Chapel Hill, Wake Forest, and surrounding Triangle NC communities"
+    "Raleigh, Wake Forest, Rolesville, Chapel Hill, Cary, Apex, Garner, Wendell, Knightdale, Hillsborough, and surrounding Triangle NC communities"
 };
 
 export const navItems = [
@@ -33,14 +33,15 @@ export const navItems = [
 
 export const serviceAreas = [
   "Raleigh",
-  "Durham",
+  "Wake Forest",
+  "Rolesville",
+  "Chapel Hill",
   "Cary",
   "Apex",
-  "Holly Springs",
-  "Fuquay-Varina",
   "Garner",
-  "Chapel Hill",
-  "Wake Forest"
+  "Wendell",
+  "Knightdale",
+  "Hillsborough"
 ];
 
 // EDIT MENU: Update here when Cheesedogs changes menu items, prices, combos, or toppings.
