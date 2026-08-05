@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Cheesedogs NC"
   },
   description:
-    "Book Cheesedogs NC for loaded hot dogs, cold drinks, and mobile hot dog cart catering across Raleigh, Durham, Cary, Apex, and the Triangle.",
+    "Book Cheesedogs NC for loaded hot dogs, cold drinks, and mobile hot dog cart catering across Raleigh, Wake Forest, Cary, Apex, and the Triangle.",
   openGraph: {
     title: "Cheesedogs NC | Triangle NC Hot Dog Cart",
     description:
